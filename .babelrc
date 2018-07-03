@@ -1,13 +1,5 @@
 {
   "plugins": [
-    "babel-plugin-inline-import",
-    "@babel/plugin-proposal-decorators",
-    ["@babel/plugin-proposal-class-properties", { "loose": true }],
-    [
-      "module-resolver",
-      {
-        "root": ["./"]
-      }
-    ]
+    "babel-plugin-inline-import"
   ]
 }
