@@ -1,16 +1,11 @@
+import Resolutions from "./resolutions";
+
+const res = Resolutions.find({}).fetch();
+
 export default {
   Query: {
     resolutions() {
-      return [
-        {
-          _id: "1",
-          name: "Get stuff done!",
-        },
-        {
-          _id: "fdafafafdaf",
-          name: "Lose some wieght!",
-        },
-      ];
+      return res;
     },
   },
 };
