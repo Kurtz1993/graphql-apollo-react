@@ -12,6 +12,9 @@ const createResolution = gql`
 
 @graphql(createResolution, {
   name: "createResolution",
+  options: {
+    refetchQueries: ['Resolutions']
+  }
 })
 class ResolutionForm extends Component {
   state = {};
@@ -26,7 +29,6 @@ class ResolutionForm extends Component {
       });
 
       this.name.current.value = "";
-      this.props.refetch();
     } catch (e) {
       console.log(e);
     }
