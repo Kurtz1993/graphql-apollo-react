@@ -21,6 +21,7 @@
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.51",
     "babel-plugin-inline-import": "^3.0.0"
   }
 }

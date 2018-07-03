@@ -10,6 +10,9 @@ const createResolution = gql`
   }
 `;
 
+@graphql(createResolution, {
+  name: "createResolution",
+})
 class ResolutionForm extends Component {
   state = {};
   name = React.createRef();
@@ -29,6 +32,4 @@ class ResolutionForm extends Component {
   }
 }
 
-export default graphql(createResolution, {
-  name: "createResolution",
-})(ResolutionForm);
+export default ResolutionForm;
