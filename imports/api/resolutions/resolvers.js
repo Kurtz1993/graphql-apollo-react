@@ -7,6 +7,8 @@ export default {
     },
   },
   Mutation: {
+    // Second parameter is args object, which contains an object
+    // with all the data passed to the mutation
     createResolution(obj, { name }, context) {
       const resolutionId = Resolutions.insert({
         name,
