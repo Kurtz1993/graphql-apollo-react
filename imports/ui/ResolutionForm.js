@@ -3,8 +3,8 @@ import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 
 const createResolution = gql`
-  mutation createResolution {
-    createResolution {
+  mutation createResolution($name: String!) {
+    createResolution(name: $name) {
       _id
     }
   }
@@ -17,9 +17,19 @@ class ResolutionForm extends Component {
   state = {};
   name = React.createRef();
 
-  submitForm = () => {
-    console.log(this.name.current.value);
-    this.props.createResolution();
+  submitForm = async () => {
+    try {
+      await this.props.createResolution({
+        variables: {
+          name: this.name.current.value,
+        },
+      });
+
+      this.name.current.value = "";
+      this.props.refetch();
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   render() {
