@@ -20,18 +20,22 @@ const resolvers = {
       return [
         {
           _id: "1",
-          name: "Get stuff done!"
-        }
+          name: "Get stuff done!",
+        },
+        {
+          _id: "fdafafafdaf",
+          name: "Lose some wieght!",
+        },
       ];
-    }
-  }
+    },
+  },
 };
 
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers
+  resolvers,
 });
 
 createApolloServer({
-  schema
+  schema,
 });
