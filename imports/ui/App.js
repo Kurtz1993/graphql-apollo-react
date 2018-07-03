@@ -7,7 +7,7 @@ import ResolutionForm from "./ResolutionForm";
 const App = ({ data }) => (
   <div>
     <h1>{data.hi}</h1>
-    <ResolutionForm refetch={data.refetch} />
+    <ResolutionForm />
     <ul>
       {data.resolutions &&
         data.resolutions.map(resolution => (
