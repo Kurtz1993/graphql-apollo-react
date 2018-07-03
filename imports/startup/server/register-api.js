@@ -12,8 +12,6 @@ type Query {
 }
 `;
 const typeDefs = [ResolutionSchema, testSchema];
-console.log(ResolutionSchema);
-
 
 const testResolver = {
   Query: {
