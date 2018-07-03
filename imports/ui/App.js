@@ -18,7 +18,7 @@ const App = ({ data }) => (
 );
 
 const hiQuery = gql`
-  {
+  query Resolutions{
     hi
     resolutions {
       _id
