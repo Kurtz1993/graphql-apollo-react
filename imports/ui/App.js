@@ -6,22 +6,27 @@ import RegisterForm from "./RegisterForm";
 import ResolutionForm from "./ResolutionForm";
 import LoginForm from "./LoginForm";
 
-const App = ({ loading, resolutions, client }) => {
+const App = ({ loading, resolutions, client, user }) => {
   if (loading) return null;
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={() => {
-          Meteor.logout();
-          client.resetStore();
-        }}
-      >
-        Logout
-      </button>
-      <RegisterForm client={client} />
-      <LoginForm client={client} />
+      {user._id ? (
+        <button
+          type="button"
+          onClick={() => {
+            Meteor.logout();
+            client.resetStore();
+          }}
+        >
+          Logout
+        </button>
+      ) : (
+        <React.Fragment>
+          <RegisterForm client={client} />
+          <LoginForm client={client} />
+        </React.Fragment>
+      )}
       <ResolutionForm />
       <ul>
         {resolutions &&
@@ -38,6 +43,9 @@ const resolutionsQuery = gql`
     resolutions {
       _id
       name
+    }
+    user {
+      _id
     }
   }
 `;
