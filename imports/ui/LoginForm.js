@@ -11,6 +11,10 @@ class LoginForm extends Component {
       this.email.current.value,
       this.password.current.value,
       error => {
+        if (!error) {
+          this.props.client.resetStore();
+        }
+
         console.log(error);
       }
     );

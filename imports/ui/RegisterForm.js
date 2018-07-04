@@ -14,6 +14,10 @@ class RegisterForm extends Component {
         password: this.password.current.value,
       },
       error => {
+        if (!error) {
+          this.props.client.resetStore();
+        }
+
         console.log(error);
       }
     );
